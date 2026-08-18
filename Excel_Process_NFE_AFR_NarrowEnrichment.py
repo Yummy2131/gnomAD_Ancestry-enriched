@@ -75,14 +75,14 @@ def filter(input_folder, output_file, group_column, enriched_frequency_column, B
                                     (df[group_column] == Group_A) &
                                     (df[A_frequency_column] > 0.00005) &
                                     (df[A_frequency_column] < 0.01) &
-                                    (df[A_allele_count] > 2) &
+                                    (df[A_allele_count] >= 2) &
                                     ((df[A_to_B_frequency_ratio_column] >= 10) | (df[A_to_B_frequency_ratio_column].isna())) &
                                     ((df[A_to_C_frequency_ratio_column] >= 10) | (df[A_to_C_frequency_ratio_column].isna()))]
 
                 Group_B_Enriched = df[(df[group_column] == Group_B) &
                                       (df[B_frequency_column] > 0.00005) &
                                       (df[B_frequency_column] < 0.01) &
-                                      (df[B_allele_count] > 2) &
+                                      (df[B_allele_count] >= 2) &
                                       ((df[B_to_A_frequency_ratio_column] >= 10) | (df[B_to_A_frequency_ratio_column].isna())) &
                                       ((df[B_to_C_frequency_ratio_column] >= 10) | (df[B_to_C_frequency_ratio_column].isna()))]
 
